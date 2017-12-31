@@ -1,0 +1,197 @@
+TerminalSecurity`Security::OSXCode::main:
+Security[0x243790] <+0>:   55                       pushq  %rbp
+Security[0x243791] <+1>:   48 89 e5                 movq   %rsp, %rbp
+Security[0x243794] <+4>:   41 57                    pushq  %r15
+Security[0x243796] <+6>:   41 56                    pushq  %r14
+Security[0x243798] <+8>:   41 55                    pushq  %r13
+Security[0x24379a] <+10>:  41 54                    pushq  %r12
+Security[0x24379c] <+12>:  53                       pushq  %rbx
+Security[0x24379d] <+13>:  48 83 ec 48              subq   $0x48, %rsp
+Security[0x2437a1] <+17>:  49 89 fe                 movq   %rdi, %r14
+Security[0x2437a4] <+20>:  48 8b 1d b5 f9 0b 00     movq   0xbf9b5(%rip), %rbx       ; (void *)0x0000000000000000
+Security[0x2437ab] <+27>:  48 8b 1b                 movq   (%rbx), %rbx
+Security[0x2437ae] <+30>:  48 89 5d d0              movq   %rbx, -0x30(%rbp)
+Security[0x2437b2] <+34>:  48 c7 45 c8 00 00 00 00  movq   $0x0, -0x38(%rbp)
+Security[0x2437ba] <+42>:  48 8d 75 c8              leaq   -0x38(%rbp), %rsi
+Security[0x2437be] <+46>:  31 ff                    xorl   %edi, %edi
+Security[0x2437c0] <+48>:  e8 ce 42 ed ff           callq  0x117a93                  ; SecCodeCopySelf
+Security[0x2437c5] <+53>:  85 c0                    testl  %eax, %eax
+Security[0x2437c7] <+55>:  0f 84 cd 00 00 00        je     0x24389a                  ; <+266>
+Security[0x2437cd] <+61>:  48 8d 7d c7              leaq   -0x39(%rbp), %rdi
+Security[0x2437d1] <+65>:  e8 ac 58 01 00           callq  0x259082                  ; symbol stub for: _CFBundleCopyMainBundleExecutableURL
+Security[0x2437d6] <+70>:  48 8d 7d a8              leaq   -0x58(%rbp), %rdi
+Security[0x2437da] <+74>:  48 89 c6                 movq   %rax, %rsi
+Security[0x2437dd] <+77>:  e8 e1 94 ff ff           callq  0x23ccc3                  ; Security::cfStringRelease(__CFURL const*)
+Security[0x2437e2] <+82>:  80 7d c7 00              cmpb   $0x0, -0x39(%rbp)
+Security[0x2437e6] <+86>:  0f 84 5a 01 00 00        je     0x243946                  ; <+438>
+Security[0x2437ec] <+92>:  f6 45 a8 01              testb  $0x1, -0x58(%rbp)
+Security[0x2437f0] <+96>:  4c 8d 6d a9              leaq   -0x57(%rbp), %r13
+Security[0x2437f4] <+100>: 4c 0f 45 6d b8           cmovneq -0x48(%rbp), %r13
+Security[0x2437f9] <+105>: be 2f 00 00 00           movl   $0x2f, %esi
+Security[0x2437fe] <+110>: 4c 89 ef                 movq   %r13, %rdi
+Security[0x243801] <+113>: e8 ac 64 01 00           callq  0x259cb2                  ; symbol stub for: strrchr
+Security[0x243806] <+118>: 48 89 c3                 movq   %rax, %rbx
+Security[0x243809] <+121>: 48 85 db                 testq  %rbx, %rbx
+Security[0x24380c] <+124>: 0f 84 cf 00 00 00        je     0x2438e1                  ; <+337>
+Security[0x243812] <+130>: 48 8d 35 8b 39 04 00     leaq   0x4398b(%rip), %rsi       ; "/Contents/MacOS/"
+Security[0x243819] <+137>: 4c 89 ef                 movq   %r13, %rdi
+Security[0x24381c] <+140>: e8 9d 64 01 00           callq  0x259cbe                  ; symbol stub for: strstr
+Security[0x243821] <+145>: 49 89 c4                 movq   %rax, %r12
+Security[0x243824] <+148>: 4d 85 e4                 testq  %r12, %r12
+Security[0x243827] <+151>: 0f 84 b4 00 00 00        je     0x2438e1                  ; <+337>
+Security[0x24382d] <+157>: 49 8d 44 24 0f           leaq   0xf(%r12), %rax
+Security[0x243832] <+162>: 48 39 d8                 cmpq   %rbx, %rax
+Security[0x243835] <+165>: 0f 85 a6 00 00 00        jne    0x2438e1                  ; <+337>
+Security[0x24383b] <+171>: bf 48 00 00 00           movl   $0x48, %edi
+Security[0x243840] <+176>: e8 c9 59 01 00           callq  0x25920e                  ; symbol stub for: operator new(unsigned long)
+Security[0x243845] <+181>: 49 89 c7                 movq   %rax, %r15
+Security[0x243848] <+184>: 4d 29 ec                 subq   %r13, %r12
+Security[0x24384b] <+187>: 48 8d 7d 90              leaq   -0x70(%rbp), %rdi
+Security[0x24384f] <+191>: 48 8d 75 a8              leaq   -0x58(%rbp), %rsi
+Security[0x243853] <+195>: 31 d2                    xorl   %edx, %edx
+Security[0x243855] <+197>: 4c 89 e1                 movq   %r12, %rcx
+Security[0x243858] <+200>: 49 89 f0                 movq   %rsi, %r8
+Security[0x24385b] <+203>: e8 24 59 01 00           callq  0x259184                  ; symbol stub for: std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::basic_string(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long, unsigned long, std::__1::allocator<char> const&)
+Security[0x243860] <+208>: f6 45 90 01              testb  $0x1, -0x70(%rbp)
+Security[0x243864] <+212>: 48 8d 75 91              leaq   -0x6f(%rbp), %rsi
+Security[0x243868] <+216>: 48 0f 45 75 a0           cmovneq -0x60(%rbp), %rsi
+Security[0x24386d] <+221>: b3 01                    movb   $0x1, %bl
+Security[0x24386f] <+223>: 31 d2                    xorl   %edx, %edx
+Security[0x243871] <+225>: 4c 89 ff                 movq   %r15, %rdi
+Security[0x243874] <+228>: e8 8d 05 00 00           callq  0x243e06                  ; Security::Bundle::Bundle(char const*, char const*)
+Security[0x243879] <+233>: 49 8d 7e 08              leaq   0x8(%r14), %rdi
+Security[0x24387d] <+237>: 31 db                    xorl   %ebx, %ebx
+Security[0x24387f] <+239>: e8 0a e1 db ff           callq  0x198e                    ; Security::Mutex::Mutex()
+Security[0x243884] <+244>: f0                       lock   
+Security[0x243885] <+245>: 41 ff 47 08              incl   0x8(%r15)
+Security[0x243889] <+249>: 4d 89 3e                 movq   %r15, (%r14)
+Security[0x24388c] <+252>: 48 8d 7d 90              leaq   -0x70(%rbp), %rdi
+Security[0x243890] <+256>: e8 f5 58 01 00           callq  0x25918a                  ; symbol stub for: std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+Security[0x243895] <+261>: e9 1f 01 00 00           jmp    0x2439b9                  ; <+553>
+Security[0x24389a] <+266>: bf 18 00 00 00           movl   $0x18, %edi
+Security[0x24389f] <+271>: e8 6a 59 01 00           callq  0x25920e                  ; symbol stub for: operator new(unsigned long)
+Security[0x2438a4] <+276>: 49 89 c7                 movq   %rax, %r15
+Security[0x2438a7] <+279>: 48 8b 75 c8              movq   -0x38(%rbp), %rsi
+Security[0x2438ab] <+283>: 41 c7 47 08 00 00 00 00  movl   $0x0, 0x8(%r15)
+Security[0x2438b3] <+291>: 48 8d 05 1e af 0e 00     leaq   0xeaf1e(%rip), %rax       ; vtable for Security::OSXCodeWrap + 16
+Security[0x2438ba] <+298>: 49 89 07                 movq   %rax, (%r15)
+Security[0x2438bd] <+301>: 49 8d 7f 10              leaq   0x10(%r15), %rdi
+Security[0x2438c1] <+305>: e8 c4 0d 00 00           callq  0x24468a                  ; Security::CFCopyRef<__SecCode const*>::CFCopyRef(__SecCode const*)
+Security[0x2438c6] <+310>: 49 8d 7e 08              leaq   0x8(%r14), %rdi
+Security[0x2438ca] <+314>: e8 bf e0 db ff           callq  0x198e                    ; Security::Mutex::Mutex()
+Security[0x2438cf] <+319>: 4c 89 f8                 movq   %r15, %rax
+Security[0x2438d2] <+322>: 48 83 c0 08              addq   $0x8, %rax
+Security[0x2438d6] <+326>: f0                       lock   
+Security[0x2438d7] <+327>: ff 00                    incl   (%rax)
+Security[0x2438d9] <+329>: 4d 89 3e                 movq   %r15, (%r14)
+Security[0x2438dc] <+332>: e9 eb 00 00 00           jmp    0x2439cc                  ; <+572>
+Security[0x2438e1] <+337>: 48 8d 3d 6d 4e 03 00     leaq   0x34e6d(%rip), %rdi       ; "bundle"
+Security[0x2438e8] <+344>: e8 6c da 00 00           callq  0x251359                  ; secLogObjForScope
+Security[0x2438ed] <+349>: 49 89 c7                 movq   %rax, %r15
+Security[0x2438f0] <+352>: be 02 00 00 00           movl   $0x2, %esi
+Security[0x2438f5] <+357>: 4c 89 ff                 movq   %r15, %rdi
+Security[0x2438f8] <+360>: e8 6b de 00 00           callq  0x251768                  ; weak_os_log_type_enabled
+Security[0x2438fd] <+365>: 84 c0                    testb  %al, %al
+Security[0x2438ff] <+367>: 74 45                    je     0x243946                  ; <+438>
+Security[0x243901] <+369>: 48 89 e3                 movq   %rsp, %rbx
+Security[0x243904] <+372>: 48 89 e0                 movq   %rsp, %rax
+Security[0x243907] <+375>: 4c 8d 40 f0              leaq   -0x10(%rax), %r8
+Security[0x24390b] <+379>: 4c 89 c4                 movq   %r8, %rsp
+Security[0x24390e] <+382>: c6 40 f0 02              movb   $0x2, -0x10(%rax)
+Security[0x243912] <+386>: c6 40 f1 01              movb   $0x1, -0xf(%rax)
+Security[0x243916] <+390>: c6 40 f2 20              movb   $0x20, -0xe(%rax)
+Security[0x24391a] <+394>: c6 40 f3 08              movb   $0x8, -0xd(%rax)
+Security[0x24391e] <+398>: 4c 89 68 f4              movq   %r13, -0xc(%rax)
+Security[0x243922] <+402>: 48 8d 3d d7 c6 db ff     leaq   -0x243929(%rip), %rdi
+Security[0x243929] <+409>: 48 8d 0d 70 8b 05 00     leaq   0x58b70(%rip), %rcx       ; "OSXCode::main(%s) not recognized as bundle (treating as tool)"
+Security[0x243930] <+416>: ba 02 00 00 00           movl   $0x2, %edx
+Security[0x243935] <+421>: 41 b9 0c 00 00 00        movl   $0xc, %r9d
+Security[0x24393b] <+427>: 4c 89 fe                 movq   %r15, %rsi
+Security[0x24393e] <+430>: e8 f9 dc 00 00           callq  0x25163c                  ; weak_os_log_impl
+Security[0x243943] <+435>: 48 89 dc                 movq   %rbx, %rsp
+Security[0x243946] <+438>: bf 28 00 00 00           movl   $0x28, %edi
+Security[0x24394b] <+443>: e8 be 58 01 00           callq  0x25920e                  ; symbol stub for: operator new(unsigned long)
+Security[0x243950] <+448>: 48 89 c3                 movq   %rax, %rbx
+Security[0x243953] <+451>: f6 45 a8 01              testb  $0x1, -0x58(%rbp)
+Security[0x243957] <+455>: 4c 8d 7d a9              leaq   -0x57(%rbp), %r15
+Security[0x24395b] <+459>: 4c 0f 45 7d b8           cmovneq -0x48(%rbp), %r15
+Security[0x243960] <+464>: c7 43 08 00 00 00 00     movl   $0x0, 0x8(%rbx)
+Security[0x243967] <+471>: 48 8d 05 8a ad 0e 00     leaq   0xead8a(%rip), %rax       ; vtable for Security::ExecutableTool + 16
+Security[0x24396e] <+478>: 48 89 03                 movq   %rax, (%rbx)
+Security[0x243971] <+481>: 4c 8d 63 10              leaq   0x10(%rbx), %r12
+Security[0x243975] <+485>: 48 c7 43 20 00 00 00 00  movq   $0x0, 0x20(%rbx)
+Security[0x24397d] <+493>: 48 c7 43 18 00 00 00 00  movq   $0x0, 0x18(%rbx)
+Security[0x243985] <+501>: 48 c7 43 10 00 00 00 00  movq   $0x0, 0x10(%rbx)
+Security[0x24398d] <+509>: 4c 89 ff                 movq   %r15, %rdi
+Security[0x243990] <+512>: e8 05 63 01 00           callq  0x259c9a                  ; symbol stub for: strlen
+Security[0x243995] <+517>: 4c 89 e7                 movq   %r12, %rdi
+Security[0x243998] <+520>: 4c 89 fe                 movq   %r15, %rsi
+Security[0x24399b] <+523>: 48 89 c2                 movq   %rax, %rdx
+Security[0x24399e] <+526>: e8 93 57 01 00           callq  0x259136                  ; symbol stub for: std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(char const*, unsigned long)
+Security[0x2439a3] <+531>: 49 8d 7e 08              leaq   0x8(%r14), %rdi
+Security[0x2439a7] <+535>: e8 e2 df db ff           callq  0x198e                    ; Security::Mutex::Mutex()
+Security[0x2439ac] <+540>: 48 89 d8                 movq   %rbx, %rax
+Security[0x2439af] <+543>: 48 83 c0 08              addq   $0x8, %rax
+Security[0x2439b3] <+547>: f0                       lock   
+Security[0x2439b4] <+548>: ff 00                    incl   (%rax)
+Security[0x2439b6] <+550>: 49 89 1e                 movq   %rbx, (%r14)
+Security[0x2439b9] <+553>: 48 8d 7d a8              leaq   -0x58(%rbp), %rdi
+Security[0x2439bd] <+557>: e8 c8 57 01 00           callq  0x25918a                  ; symbol stub for: std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+Security[0x2439c2] <+562>: 48 8b 1d 97 f7 0b 00     movq   0xbf797(%rip), %rbx       ; (void *)0x0000000000000000
+Security[0x2439c9] <+569>: 48 8b 1b                 movq   (%rbx), %rbx
+Security[0x2439cc] <+572>: 48 8d 7d c8              leaq   -0x38(%rbp), %rdi
+Security[0x2439d0] <+576>: e8 47 0d 00 00           callq  0x24471c                  ; Security::CFRef<__SecCode*>::~CFRef()
+Security[0x2439d5] <+581>: 48 3b 5d d0              cmpq   -0x30(%rbp), %rbx
+Security[0x2439d9] <+585>: 75 1b                    jne    0x2439f6                  ; <+614>
+Security[0x2439db] <+587>: 4c 89 f0                 movq   %r14, %rax
+Security[0x2439de] <+590>: 48 8d 65 d8              leaq   -0x28(%rbp), %rsp
+Security[0x2439e2] <+594>: 5b                       popq   %rbx
+Security[0x2439e3] <+595>: 41 5c                    popq   %r12
+Security[0x2439e5] <+597>: 41 5d                    popq   %r13
+Security[0x2439e7] <+599>: 41 5e                    popq   %r14
+Security[0x2439e9] <+601>: 41 5f                    popq   %r15
+Security[0x2439eb] <+603>: 5d                       popq   %rbp
+Security[0x2439ec] <+604>: c3                       retq   
+Security[0x2439ed] <+605>: eb 00                    jmp    0x2439ef                  ; <+607>
+Security[0x2439ef] <+607>: 49 89 c6                 movq   %rax, %r14
+Security[0x2439f2] <+610>: eb 43                    jmp    0x243a37                  ; <+679>
+Security[0x2439f4] <+612>: eb 35                    jmp    0x243a2b                  ; <+667>
+Security[0x2439f6] <+614>: e8 b5 58 01 00           callq  0x2592b0                  ; symbol stub for: __stack_chk_fail
+Security[0x2439fb] <+619>: 49 89 c6                 movq   %rax, %r14
+Security[0x2439fe] <+622>: 48 89 df                 movq   %rbx, %rdi
+Security[0x243a01] <+625>: e8 fc 57 01 00           callq  0x259202                  ; symbol stub for: operator delete(void*)
+Security[0x243a06] <+630>: eb 26                    jmp    0x243a2e                  ; <+670>
+Security[0x243a08] <+632>: eb 21                    jmp    0x243a2b                  ; <+667>
+Security[0x243a0a] <+634>: 49 89 c6                 movq   %rax, %r14
+Security[0x243a0d] <+637>: 4c 89 ff                 movq   %r15, %rdi
+Security[0x243a10] <+640>: e8 ed 57 01 00           callq  0x259202                  ; symbol stub for: operator delete(void*)
+Security[0x243a15] <+645>: eb 20                    jmp    0x243a37                  ; <+679>
+Security[0x243a17] <+647>: eb 12                    jmp    0x243a2b                  ; <+667>
+Security[0x243a19] <+649>: 49 89 c6                 movq   %rax, %r14
+Security[0x243a1c] <+652>: 48 8d 7d 90              leaq   -0x70(%rbp), %rdi
+Security[0x243a20] <+656>: e8 65 57 01 00           callq  0x25918a                  ; symbol stub for: std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+Security[0x243a25] <+661>: 84 db                    testb  %bl, %bl
+Security[0x243a27] <+663>: 74 05                    je     0x243a2e                  ; <+670>
+Security[0x243a29] <+665>: eb 20                    jmp    0x243a4b                  ; <+699>
+Security[0x243a2b] <+667>: 49 89 c6                 movq   %rax, %r14
+Security[0x243a2e] <+670>: 48 8d 7d a8              leaq   -0x58(%rbp), %rdi
+Security[0x243a32] <+674>: e8 53 57 01 00           callq  0x25918a                  ; symbol stub for: std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+Security[0x243a37] <+679>: 48 8d 7d c8              leaq   -0x38(%rbp), %rdi
+Security[0x243a3b] <+683>: e8 dc 0c 00 00           callq  0x24471c                  ; Security::CFRef<__SecCode*>::~CFRef()
+Security[0x243a40] <+688>: 4c 89 f7                 movq   %r14, %rdi
+Security[0x243a43] <+691>: e8 76 56 01 00           callq  0x2590be                  ; symbol stub for: _Unwind_Resume
+Security[0x243a48] <+696>: 49 89 c6                 movq   %rax, %r14
+Security[0x243a4b] <+699>: 4c 89 ff                 movq   %r15, %rdi
+Security[0x243a4e] <+702>: e8 af 57 01 00           callq  0x259202                  ; symbol stub for: operator delete(void*)
+Security[0x243a53] <+707>: eb d9                    jmp    0x243a2e                  ; <+670>
+Security[0x243a55] <+709>: 90                       nop    
+Security[0x243a56] <+710>: 90                       nop    
+Security[0x243a57] <+711>: 90                       nop    
+Security[0x243a58] <+712>: 90                       nop    
+Security[0x243a59] <+713>: 90                       nop    
+Security[0x243a5a] <+714>: 90                       nop    
+Security[0x243a5b] <+715>: 90                       nop    
+Security[0x243a5c] <+716>: 90                       nop    
+Security[0x243a5d] <+717>: 90                       nop    
+Security[0x243a5e] <+718>: 90                       nop    
+Security[0x243a5f] <+719>: 90                       nop   
